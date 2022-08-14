@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 状态栏 -->
+    <div class="status">
+        <div class="container">
+            <span class="text">华为商城</span>
+            <span class="text">花粉俱乐部</span>
+            <span class="text">EMUI</span>
+            <span class="user"></span>
+            <span>登录</span>
+            <span> | </span>
+            <span>注册</span>
+        </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="nav">
+        <div class="container">
+            <!-- 荣耀标志 -->
+            <img src="./img/56.png" alt="">
+            <ul>               
+                <li>产品</li>
+                <li>关于荣耀</li>
+                <li>新闻评测</li>
+                <li>视频</li>
+                <li>活动</li>
+                <li>服务支持</li>
+            </ul>
+            <!-- 搜索栏遮盖效果 -->
+            <div class="search">
+                <input type="text">
+                <div class="search-hover">
+                    <span>荣耀20s</span>
+                    <span>荣耀9x</span>
+                    <div class="img">
+                        <div class="img1"></div>
+                        <div class="img2"></div>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- banner -->
+    <!-- <div class="banner">
+        <div class="container">
+            <div class="arrow arrow1"></div>
+            <div class="arrow arrow2"></div>
+        </div>
+    </div> -->
+    <div class="banner">
+        <div class="container">
+            <div class="list">
+                <img src="./img/599da8efb8403cf4a679dcd871c8f8b3.jpg" alt="">
+                <img src="./img/620379be1b895dfe26057d01004b2a21.jpg" alt="">
+                <img src="./img/banner-img.jpg" alt="">
+                <img src="./img/cc7cd5708dbd1975d05cde3e479dd3c9.jpg" alt="">
+                 <!-- 猫腻法 -->
+                <img src="./img/599da8efb8403cf4a679dcd871c8f8b3.jpg" alt="">
+            </div>
+            <div class="btns">
+                <span class="point choose"></span>
+                <span class="point"></span>
+                <span class="point"></span>
+                <span class="point"></span>            
+            </div>
+            <div class="prev">&lt;</div>
+            <div class="next">&gt;</div>
+        </div>
+    </div>
+
+
+    <!-- 渐近线 -->
+    <div class="line "></div>
+    <!-- 手机介绍板块 -->
+    <div class="phone">
+        <div class="container">
+            <h2>找到适合你的荣耀手机</h2>
+            <div class="select-list">
+                <select >
+                    <option value="">产品类型</option>
+                </select>
+                <select placeholder="屏幕尺寸">
+                    <option value="">屏幕尺寸</option>
+                </select>
+                <select placeholder="网络制式">
+                    <option value="">网络制式</option>
+                </select>
+                <select placeholder="发布时间">
+                    <option value="">发布时间</option>
+                </select>
+            </div>
+            <!-- 内容板块 -->
+            <div class="content">
+                <img src="./img/手机.jpg" alt="">
+                <div class="info">
+                    <img src="./img/荣耀20系列.jpg" alt="">
+                    <h3>定 格 奇 幻 之 美</h3>
+                    <p>制式：全网通</p>
+                    <p>颜色：冰岛白/幻夜黑/幻影蓝</p>
+                    <p>容量：8GB+128GB/8GB+256GB    </p>
+                    <div class="btn btn1">立即购买 ></div>
+                    <div class="btn btn2">加入购物车 ></div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+
+    <!-- 返向渐近线 -->
+    <div class="line line-left"></div>
+     <!-- 手机列表 -->
+    <div class="phone-list container">
+        <div class="title">
+            <h4>相关推荐</h4>
+            <span>更多 ></span>
+        </div>
+        <div class="list ">
+            <div class="list-content">
+                <h3>荣耀20</h3>
+                <p>定格奇幻之旅</p>
+                <img src="./img/荣耀20.jpg" alt="">
+                <div class="btn">立即购买 ></div>
+                <div class="icon1">超值</div>
+            </div>
+            <div class="list-content">
+                <h3>荣耀9S</h3>
+                <p>快有新生，超能权贵</p>
+                <img src="./img/荣耀9X.jpg" alt="">
+                <div class="btn">立即购买 ></div>
+            </div>
+            <div class="list-content">
+                <h3>荣耀20s</h3>
+                <p>定格夜色之美</p>
+                <img src="./img/荣耀20S.jpg" alt="">
+                <div class="btn">立即购买 ></div>
+            </div>
+            <div class="list-content">
+                <h3>荣耀20青春版</h3>
+                <p>屏幕炫酷，畅想你的美</p>
+                <img src="./img/荣耀20青春版.jpg" alt="">
+                <div class="btn">立即购买 ></div>
+                <div class="icon1 icon2">新品</div>
+            </div>
+        </div>
+    </div>
+    <!-- 页脚 -->
+    <div class="foot "></div>
+<script src="./js/jquery-1.12.3.min.js"></script>
+<script>
+    
+    //设置信号量
+    var index=0;
+    //右箭头点击
+    $('.next').click(function(){
+        // 防流氓
+        if ($('img').is(':animated')) {
+            return;
+        }
+        //改变信号量
+        index++;
+        //向右移动
+        //animated 第一个参数动画运动终止的状态，第二个参数是时间，第三个参数是回调函数         
+        $('.list').animate({left:-1200*index},1000,function(){
+            if(index === 4){
+            $('.list').css('left',0);
+            index=0;
+            }
+            changeWhite(index);
+        
+        })
+    })   
+
+    //向左点击箭头
+    $('.prev').click(function(){
+        if(index===0){
+            index=4;
+            $('.list').css('left',-1200*index);
+        }
+        index--;
+        $('.list').animate({left:-1200*index},1000)
+        changeWhite(index);
+    })  
+
+    //点击小白点绑定事件
+    $('.point').click(function(){
+        //获取索引
+        var index=$(this).index();
+        $('.list').animate({left:-1200*index},1000)
+        changeWhite(index);
+    })
+    $('.point').mouseenter(function(){
+        //获取索引
+        var index=$(this).index();
+        $('.list').animate({left:-1200*index},1000)
+        changeWhite(index);
+    })
+    
+    //小白点改变
+    function changeWhite(index){
+        //注意是span不是 .btns
+        $('.point').eq(index).addClass('choose').siblings().removeClass('choose');
+       
+    }
+</script>
+</body>
+</html>

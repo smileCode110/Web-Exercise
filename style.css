@@ -1,0 +1,369 @@
+/* 清空默认样式 */
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+    color: black;
+    text-decoration: none;
+}
+html,
+body{
+    background-color:#efefef;
+}
+/* 原子类 */
+/* 所有居中的使用 */
+.container{
+    width:1128px;
+    margin: 0 auto;
+}
+/* 原子类 所有按钮使用 */
+.btn{
+    height:38px;
+    width:130px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color:white;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;  
+    
+}
+.btn2{
+    position: relative;
+    left:160px;
+    bottom: 80px;color: black;
+    background-color: white;
+
+}
+
+
+
+/* 渐变线 */
+/* 思路：先画一个盒子，在用盒子套住后面的伪元素，后面伪元素是三角形，。注意要给盒子设置溢出隐藏 */
+.line{
+    
+    margin:0 auto;
+    width: 1128px;
+    height: 10px;
+    overflow: hidden;
+    
+}
+.line::after{
+    content: "";
+    border:10px solid transparent;
+    border-left-width:0 ;
+    border-right-width: 1128px;
+    border-right-color: skyblue;
+    position: relative;
+    top:8px;
+
+}
+.line-left{
+    transform: rotateY(180deg);
+}
+/* 1\状态栏 */
+.status{
+    height:28px;
+    line-height: 28px;
+    font-size: 14px;
+    color: white;
+    background-image: url(./img/1px_03.gif);
+}
+.status .container{
+    /* 将盒子设置成弹性盒 */
+    display: flex;
+    /* 项目在主轴的对齐方式 */
+    justify-content: flex-end;
+    
+}
+.status span{
+    /* 保留空白 */
+    white-space: pre;
+}
+.status .user{
+    position: relative;
+    width: 20px;
+    margin-left: 50px;
+
+}
+/* 画小人头 */
+.status .user::before{
+    content: "";
+    position: absolute;
+    width: 6px;
+    height:6px;
+    border:1px solid white;
+    border-radius: 50%;
+    top:8px;
+}
+/* 画小人身 */
+.status .user::after{
+    content:"";
+    position: absolute;
+    width:12px;
+    height:6px;
+    border:1px solid white;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: none;
+    top:16px;
+    left: -3px;
+
+}
+.status .text{
+    margin-right: 15px;
+}
+/* 2\导航栏 */
+.nav{
+    background-color:white;
+    height:50px;
+    line-height: 50px;
+    /* 阴影 */
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+}
+.nav img{
+    /* width: 106px;*/
+    /* height: 22px;  */
+    margin-right: 60px;
+}
+.nav .container{
+    display: flex;
+    align-items: center;
+}
+.nav ul{
+    display: flex;
+    /* 占满剩余空间，将input挤到右侧 */
+    flex:1;
+}
+.nav li{
+    margin-right: 55px;
+}
+.nav .search{
+    position: relative;
+}
+.nav input{
+    padding:6px 16px;
+    /* 外边框 */
+    outline: none;
+    border-radius:16px ;
+    border:solid 1px #999;
+}
+.nav .search-hover{
+    position: absolute;
+    top:0px;
+    left:30px;
+    font-size: 12px;
+}
+.nav .search-hover span{
+    margin-left: 6px;
+    background-color: #ccc;
+    padding: 3PX 6PX;
+}
+/* 导航栏放大镜 */
+.nav .img{
+    display: inline-block;
+    position: relative;
+    
+}
+.nav .img1{
+    width:10px;
+    height: 10px;
+    margin-left: 20px;
+    border:gray solid 1px;  
+    border-radius: 50%;
+
+}
+.nav .img2{
+    position: relative;
+    transform:rotate(45deg);
+    width: 12px;
+    top:2px;
+    left: 27px;
+    border-bottom: gray 1px solid;
+    
+}
+
+/* 3\banner */
+    /* 注意是background，不是background-imge */
+/* .banner .container{
+    height:555px;
+
+    background: url(./img/599da8efb8403cf4a679dcd871c8f8b3.jpg) no-repeat center ;
+    position: relative;
+}
+.banner .arrow{
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    top:50%;
+}
+.banner .arrow1{
+    left: 30px;
+    background:rgba(0, 0, 0, 0.5) url(./img/chevron-left.png) no-repeat center;
+}
+.banner .arrow2{
+    right:30px;
+    background:rgba(0, 0, 0, 0.5) url(./img/chevron-right.png) no-repeat center;
+} */
+/* 3\banner 加入轮播图版本 */
+.banner .container{
+    width: 1200px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+.banner .container .list{
+    width: 7000px;
+    height: 600x;
+    position: absolute;
+}
+.banner .container .btns{
+    position: absolute;
+    bottom: 30px;
+    /* 水平居中，设置左右位置为0 */
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.banner .container .btns span {
+    /* span不可以设置宽高 */
+    padding: 6px;
+    margin: 0 6px;
+    font-size: 0;
+    border-radius: 50%;
+    background-color: white;
+}
+.banner .container .btns .choose {
+    background-color: red;
+}
+.banner .prev,
+.banner .next {
+            position: absolute;
+            top: 50%;
+            width:30px;
+            height: 50px;
+            margin-top: -25px;
+            font-size: 30px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+            background-color: rgba(0, 0,0, 0.6);
+}
+.banner .prev {
+    left: 0;
+}
+.banner .next{
+    right: 0;
+}
+
+
+/* 手机介绍模块 */
+.phone{
+    margin-top: -20px;
+}
+.phone .container{
+    background-color:white;
+}
+.phone h2{
+    text-align: center;
+    font-size: 36px;
+    margin: 20px auto;
+}
+.phone .select-list{
+    /* 居中 */
+    display: flex;
+    justify-content: center;
+}
+.phone select{
+    width: 150px;
+    height: 40px;
+    border-radius: 5%;
+    margin-right: 25px;
+    color: gray;
+
+}
+.phone .content img{
+    margin-top: 70px;
+    margin-right: 108px;
+}
+.phone .content{
+    position: relative;
+}
+.phone .content .info{
+    position: absolute;
+    display: inline-block;
+    top:90px ;
+
+}
+.phone .info h3,
+.phone .content p
+{
+    margin:25px auto ;
+}
+.phone .info .btn{
+    margin-top:40px;
+    margin-right: 30px;
+    
+}
+.phone-list .title{
+    margin: 20px 0 15px;
+    height: 30px;
+    border-left:4px solid #00B5E2;
+    padding-left: 10px;
+    font-size:24px ;
+    font-weight: normal;
+    line-height: 30px;
+    /* background-color: yellowgreen; */
+}
+.phone-list .title span{ 
+    position: relative; 
+    bottom:30px;
+    float: right;
+    font-size: 14px;
+}
+
+.phone-list .list {
+    width: 1128px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.phone-list .list-content{
+    background-color:white;
+    padding: 20px 40px;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+}
+.phone-list .list-content img{
+    margin: 20px auto;
+}
+.phone-list .list-content .btn{
+    margin: 0 auto;
+}
+.phone-list .list-content .icon1 {
+    position:absolute;
+    top:90px;
+    left: 205px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: orange;
+    color: white;
+    font-size: 15px;
+}
+.phone-list .list-content .icon2 {
+    background-color: skyblue;
+}
+
+/* 页脚 */
+.foot {
+    height:50px;
+    background-color: slategray;
+    margin-top: 10px;
+}
